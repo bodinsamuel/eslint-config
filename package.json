@@ -1,0 +1,49 @@
+{
+  "name": "@h1fra/eslint-config",
+  "version": "1.0.0",
+  "description": "",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bodinsamuel/eslint-config.git"
+  },
+  "main": "src/index.mjs",
+  "exports": {
+    ".": "./index.mjs",
+    "./base": "./src/configs/base.mjs",
+    "./strict": "./src/configs/strict.mjs",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src/**",
+    "tsconfig.json"
+  ],
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "eslint-config",
+    "es6",
+    "nango"
+  ],
+  "scripts": {
+    "test": "eslint . --ext .ts"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^8.7.0",
+    "@typescript-eslint/parser": "^8.7.0",
+    "@eslint/js": "^9.11.1",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import-x": "^4.3.0",
+    "eslint-plugin-prettier": "5.2.1",
+    "eslint": "^9.11.1",
+    "prettier": "^3.3.3"
+  },
+  "peerDependencies": {
+    "typescript": ">=5.0.0"
+  },
+  "devDependencies": {
+    "eslint-import-resolver-typescript": "3.6.3",
+    "globals": "^15.9.0",
+    "typescript-eslint": "^8.7.0"
+  }
+}
