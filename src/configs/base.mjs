@@ -3,6 +3,7 @@ import tsParser from '@typescript-eslint/parser';
 import prettier from 'eslint-config-prettier';
 import importEslint from 'eslint-plugin-import-x';
 import prettierRecommended from 'eslint-plugin-prettier/recommended';
+import globals from 'globals';
 import * as tseslint from 'typescript-eslint';
 
 export default tseslint.config(
@@ -20,6 +21,7 @@ export default tseslint.config(
       parser: tsParser,
       ecmaVersion: 'latest',
       sourceType: 'module',
+      globals: globals.node,
       parserOptions: { project: './tsconfig.json' },
     },
     rules: {

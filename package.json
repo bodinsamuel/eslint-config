@@ -1,6 +1,6 @@
 {
   "name": "@h1fra/eslint-config",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "private": false,
   "repository": {
@@ -9,7 +9,7 @@
   },
   "main": "src/index.mjs",
   "exports": {
-    ".": "./index.mjs",
+    ".": "./src/index.mjs",
     "./base": "./src/configs/base.mjs",
     "./strict": "./src/configs/strict.mjs",
     "./package.json": "./package.json"
@@ -36,14 +36,12 @@
     "eslint-plugin-import-x": "^4.3.0",
     "eslint-plugin-prettier": "5.2.1",
     "eslint": "^9.11.1",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "globals": "^15.9.0",
+    "typescript-eslint": "^8.7.0"
   },
   "peerDependencies": {
     "typescript": ">=5.0.0"
   },
-  "devDependencies": {
-    "eslint-import-resolver-typescript": "3.6.3",
-    "globals": "^15.9.0",
-    "typescript-eslint": "^8.7.0"
-  }
+  "devDependencies": {}
 }
