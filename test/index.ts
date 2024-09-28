@@ -15,7 +15,7 @@ export interface Hello_Bar {
   foo(): void;
 }
 
-const invalid_snake_case: string | undefined = '';
+const invalid_snake_case: string | null = '';
 if (!invalid_snake_case) {
   console.error(invalid_snake_case);
 }
