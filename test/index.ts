@@ -15,13 +15,29 @@ export interface Hello_Bar {
   foo(): void;
 }
 
-const invalid_snake_case = '';
-console.error(invalid_snake_case);
+const invalid_snake_case: string | undefined = '';
+if (!invalid_snake_case) {
+  console.error(invalid_snake_case);
+}
 
 class tiptop {
+  #url: URL = new URL('');
+
+  public get url() {
+    return this.#url;
+  }
+
   bar_world() {
     return 1;
   }
+
+  public barBar(): void {
+    //
+  }
+}
+
+function noReturnType() {
+  //
 }
 
 function Toptop(): void {

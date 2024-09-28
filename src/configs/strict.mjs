@@ -42,12 +42,23 @@ export default [
       '@typescript-eslint/no-empty-function': 'error',
 
       // Other
-      '@typescript-eslint/explicit-function-return-type': 'error',
-      '@typescript-eslint/strict-boolean-expressions': 'error',
+      '@typescript-eslint/explicit-function-return-type': [
+        'error',
+        {
+          allowHigherOrderFunctions: true,
+          allowDirectConstAssertionInArrowFunctions: true,
+        },
+      ],
+      '@typescript-eslint/strict-boolean-expressions': [
+        'error',
+        { allowNullableString: true, allowNullableBoolean: true },
+      ],
       '@typescript-eslint/member-ordering': 'error',
 
       // Unicorn
       'unicorn/catch-error-name': ['error', { name: 'err' }],
+      'unicorn/filename-case': ['error', { case: 'camelCase' }],
+      'unicorn/prevent-abbreviations': 'off',
     },
   },
 ];
