@@ -15,17 +15,8 @@ export default tseslint.config(
   prettier,
   prettierRecommended,
   {
-    files: ['**/*.{js,mjs,cjs,ts,mts,cts,tsx,mtsx,jsx}'],
-    extends: [...tseslint.configs.recommended],
-    languageOptions: {
-      parser: tsParser,
-      ecmaVersion: 'latest',
-      sourceType: 'module',
-      globals: globals.node,
-      parserOptions: { project: './tsconfig.json' },
-    },
+    files: ['**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,mtsx}'],
     rules: {
-      '@typescript-eslint/no-var-requires': 'off', // tseslint does not autodetect commonjs context
       'no-console': 1,
       'no-constant-condition': 'off',
 
@@ -40,56 +31,6 @@ export default tseslint.config(
           trailingComma: 'es5',
           useTabs: false,
           quoteProps: 'as-needed',
-        },
-      ],
-
-      // --- Typescript
-      // Recommended
-      '@typescript-eslint/await-thenable': 'error',
-      '@typescript-eslint/no-redundant-type-constituents': 'warn',
-      '@typescript-eslint/no-explicit-any': 'off',
-      '@typescript-eslint/require-await': 'error',
-      '@typescript-eslint/no-floating-promises': 'error',
-      '@typescript-eslint/no-unsafe-member-access': 'off',
-      '@typescript-eslint/no-unsafe-call': 'off',
-      '@typescript-eslint/no-unsafe-argument': 'off',
-      '@typescript-eslint/no-unsafe-assignment': 'off',
-      '@typescript-eslint/no-misused-promises': 'off',
-      '@typescript-eslint/no-unsafe-return': 'off',
-      '@typescript-eslint/no-unsafe-enum-comparison': 'off',
-      '@typescript-eslint/restrict-template-expressions': [
-        'error',
-        {
-          allowNumber: true,
-          allowBoolean: true,
-        },
-      ],
-      '@typescript-eslint/no-base-to-string': 'off',
-      '@typescript-eslint/restrict-plus-operands': 'off',
-      '@typescript-eslint/no-unused-vars': [
-        'error',
-        {
-          args: 'all',
-          argsIgnorePattern: '^_',
-          caughtErrors: 'all',
-          caughtErrorsIgnorePattern: '^_',
-          destructuredArrayIgnorePattern: '^_',
-          varsIgnorePattern: '^_',
-          ignoreRestSiblings: true,
-        },
-      ],
-
-      // Stylistic
-      '@typescript-eslint/no-inferrable-types': 'off',
-      '@typescript-eslint/no-empty-function': 'warn',
-
-      // Others
-      '@typescript-eslint/consistent-type-exports': 'error',
-      '@typescript-eslint/consistent-type-imports': [
-        'error',
-        {
-          prefer: 'type-imports',
-          fixStyle: 'separate-type-imports',
         },
       ],
 
@@ -144,6 +85,102 @@ export default tseslint.config(
           ],
         },
       ],
+    },
+  },
+  {
+    files: ['**/*.{ts,mts,cts,tsx,mtsx}'],
+    extends: [...tseslint.configs.recommended],
+    languageOptions: {
+      parser: tsParser,
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: globals.node,
+      parserOptions: { project: './tsconfig.json' },
+    },
+    rules: {
+      '@typescript-eslint/no-var-requires': 'off', // tseslint does not autodetect commonjs context
+
+      // --- Typescript
+      // Recommended
+      '@typescript-eslint/await-thenable': 'error',
+      '@typescript-eslint/no-redundant-type-constituents': 'warn',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/require-await': 'error',
+      '@typescript-eslint/no-floating-promises': 'error',
+      '@typescript-eslint/no-unsafe-member-access': 'off',
+      '@typescript-eslint/no-unsafe-call': 'off',
+      '@typescript-eslint/no-unsafe-argument': 'off',
+      '@typescript-eslint/no-unsafe-assignment': 'off',
+      '@typescript-eslint/no-misused-promises': 'off',
+      '@typescript-eslint/no-unsafe-return': 'off',
+      '@typescript-eslint/no-unsafe-enum-comparison': 'off',
+      '@typescript-eslint/restrict-template-expressions': [
+        'error',
+        {
+          allowNumber: true,
+          allowBoolean: true,
+        },
+      ],
+      '@typescript-eslint/no-base-to-string': 'off',
+      '@typescript-eslint/restrict-plus-operands': 'off',
+      '@typescript-eslint/no-unused-vars': [
+        'error',
+        {
+          args: 'all',
+          argsIgnorePattern: '^_',
+          caughtErrors: 'all',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          ignoreRestSiblings: true,
+        },
+      ],
+
+      // Stylistic
+      '@typescript-eslint/no-inferrable-types': 'off',
+      '@typescript-eslint/no-empty-function': 'warn',
+
+      // Others
+      '@typescript-eslint/consistent-type-exports': 'error',
+      '@typescript-eslint/consistent-type-imports': [
+        'error',
+        {
+          prefer: 'type-imports',
+          fixStyle: 'separate-type-imports',
+        },
+      ],
+      '@typescript-eslint/max-params': ['error', { max: 2 }],
+      '@typescript-eslint/method-signature-style': 'error',
+      '@typescript-eslint/naming-convention': [
+        'error',
+        {
+          selector: 'variable',
+          format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
+          leadingUnderscore: 'allow',
+        },
+        {
+          selector: 'typeParameter',
+          format: ['PascalCase'],
+          prefix: ['T', 'K'],
+        },
+        {
+          selector: 'typeLike',
+          format: ['PascalCase'],
+        },
+        {
+          selector: 'typeLike',
+          format: ['PascalCase'],
+        },
+        { selector: 'class', format: ['PascalCase'] },
+        { selector: 'method', format: ['camelCase'], leadingUnderscore: 'allow' },
+        { selector: 'function', format: ['camelCase'] },
+      ],
+      '@typescript-eslint/no-import-type-side-effects': 'error',
+
+      'no-shadow': 'off',
+      '@typescript-eslint/no-shadow': 'error',
+      '@typescript-eslint/prefer-enum-initializers': 'error',
+      '@typescript-eslint/switch-exhaustiveness-check': 'error',
     },
   }
 );

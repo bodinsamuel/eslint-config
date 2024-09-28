@@ -1,0 +1,1 @@
+let t = {foo: 'bar'}

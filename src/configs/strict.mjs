@@ -4,6 +4,7 @@ export default [
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
   {
+    files: ['**/*.{ts,mts,cts,tsx,mtsx}'],
     rules: {
       // --- Typescript
       // Recommended
@@ -36,6 +37,11 @@ export default [
       // Stylistic
       '@typescript-eslint/no-inferrable-types': 'error',
       '@typescript-eslint/no-empty-function': 'error',
+
+      // Other
+      '@typescript-eslint/explicit-function-return-type': 'error',
+      '@typescript-eslint/strict-boolean-expressions': 'error',
+      '@typescript-eslint/member-ordering': 'error',
     },
   },
 ];
