@@ -1,10 +1,13 @@
+import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import * as tseslint from 'typescript-eslint';
 
 export default [
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
+  eslintPluginUnicorn.configs['flat/recommended'],
   {
     files: ['**/*.{ts,mts,cts,tsx,mtsx}'],
+
     rules: {
       // --- Typescript
       // Recommended
@@ -42,6 +45,9 @@ export default [
       '@typescript-eslint/explicit-function-return-type': 'error',
       '@typescript-eslint/strict-boolean-expressions': 'error',
       '@typescript-eslint/member-ordering': 'error',
+
+      // Unicorn
+      'unicorn/catch-error-name': ['error', { name: 'err' }],
     },
   },
 ];

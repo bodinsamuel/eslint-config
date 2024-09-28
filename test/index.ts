@@ -10,9 +10,9 @@ console.log(top, issues);
 throw 'e';
 
 export interface Hello_Bar {
-  foo(): void;
   bar: <Bar>(value: Bar) => void;
   hello: <TBar>(value: TBar) => void;
+  foo(): void;
 }
 
 const invalid_snake_case = '';
@@ -20,10 +20,16 @@ console.error(invalid_snake_case);
 
 class tiptop {
   bar_world() {
-    return 1
+    return 1;
   }
 }
 
 function Toptop(): void {
+  //
+}
 
+try {
+  //
+} catch (e) {
+  console.log(e);
 }
