@@ -1,3 +1,4 @@
+import perfectionist from 'eslint-plugin-perfectionist';
 import eslintPluginUnicorn from 'eslint-plugin-unicorn';
 import * as tseslint from 'typescript-eslint';
 
@@ -7,7 +8,9 @@ export default [
   eslintPluginUnicorn.configs['flat/recommended'],
   {
     files: ['**/*.{ts,mts,cts,tsx,mtsx}'],
-
+    plugins: {
+      perfectionist,
+    },
     rules: {
       // --- Typescript
       // Recommended
@@ -59,6 +62,16 @@ export default [
       'unicorn/catch-error-name': ['error', { name: 'err' }],
       'unicorn/filename-case': ['error', { case: 'camelCase' }],
       'unicorn/prevent-abbreviations': 'off',
+      'unicorn/no-for-loop': 'off', // handled by ts
+      'unicorn/no-null': 'off', // can produce partial json
+      'unicorn/prefer-ternary': 'off', // produce subpar code
+
+      // Perfectionist
+      'perfectionist/sort-enums': ['error', { type: 'alphabetical', order: 'asc' }],
+      'perfectionist/sort-exports': ['error', { type: 'alphabetical', order: 'asc' }],
+      'perfectionist/sort-intersection-types': ['error', { type: 'alphabetical', order: 'asc' }],
+      'perfectionist/sort-named-exports': ['error', { type: 'alphabetical', order: 'asc' }],
+      'perfectionist/sort-union-types': ['error', { type: 'alphabetical', order: 'asc' }],
     },
   },
 ];

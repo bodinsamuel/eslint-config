@@ -16,6 +16,14 @@ export default tseslint.config(
   prettierRecommended,
   {
     files: ['**/*.{js,mjs,cjs,jsx,ts,mts,cts,tsx,mtsx}'],
+    settings: {
+      settings: {
+        'import-x/resolver': {
+          typescript: true,
+          node: true,
+        },
+      },
+    },
     rules: {
       'no-console': 1,
       'no-constant-condition': 'off',

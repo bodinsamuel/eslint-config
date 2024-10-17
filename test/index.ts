@@ -1,3 +1,8 @@
+import a from 'content-type';
+import { loadESLint } from 'eslint';
+
+loadESLint(a);
+
 const any: any = {};
 
 any.top;
@@ -49,3 +54,5 @@ try {
 } catch (e) {
   console.log(e);
 }
+
+export type TestUnion = 'b' | 'a';
