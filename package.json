@@ -1,6 +1,6 @@
 {
   "name": "@h1fra/eslint-config",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "",
   "private": false,
   "repository": {
@@ -32,6 +32,7 @@
     "@eslint/js": "^9.23.0",
     "@typescript-eslint/eslint-plugin": "^8.28.0",
     "@typescript-eslint/parser": "^8.28.0",
+    "@vitest/eslint-plugin": "^1.1.38",
     "eslint": "^9.23.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-import-resolver-typescript": "^4.3.0",
@@ -46,5 +47,7 @@
   "peerDependencies": {
     "typescript": ">=5.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "vitest": "3.0.9"
+  }
 }

@@ -1,5 +1,6 @@
 import eslint from '@eslint/js';
 import tsParser from '@typescript-eslint/parser';
+import vitest from '@vitest/eslint-plugin';
 import prettier from 'eslint-config-prettier';
 import importEslint from 'eslint-plugin-import-x';
 import prettierRecommended from 'eslint-plugin-prettier/recommended';
@@ -190,6 +191,30 @@ export default tseslint.config(
       '@typescript-eslint/no-shadow': 'error',
       '@typescript-eslint/prefer-enum-initializers': 'error',
       '@typescript-eslint/switch-exhaustiveness-check': 'error',
+    },
+  },
+  {
+    files: ['**/*.test.{ts,js,tsx,jsx}'], // or any other pattern
+    plugins: {
+      vitest,
+    },
+    rules: {
+      ...vitest.configs.recommended.rules,
+      'vitest/consistent-test-it': 'error',
+      'vitest/max-nested-describe': ['error', { max: 3 }],
+      'vitest/no-conditional-expect': 'error',
+      'vitest/no-duplicate-hooks': 'error',
+      'vitest/no-focused-tests': 'error',
+      'vitest/no-standalone-expect': 'error',
+      'vitest/no-test-return-statement': 'error',
+      'vitest/padding-around-all': 'error',
+      'vitest/prefer-hooks-in-order': 'error',
+      'vitest/prefer-hooks-on-top': 'error',
+      'vitest/prefer-lowercase-title': 'error',
+      'vitest/prefer-strict-equal': 'error',
+      'vitest/prefer-todo': 'error',
+      'vitest/require-to-throw-message': 'error',
+      'vitest/valid-title': ['error', { mustMatch: { it: ['^should .+$'] } }],
     },
   }
 );
