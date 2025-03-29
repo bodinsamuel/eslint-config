@@ -69,16 +69,17 @@ export default tseslint.config(
             'external',
             'unknown',
             'internal',
-            'parent',
-            'sibling',
+            ['parent', 'sibling', 'index'],
             'type',
-            'index',
             'object',
           ],
+          // sortTypesAmongThemselves: true,
           'newlines-between': 'always',
+          named: true,
           alphabetize: {
             order: 'asc',
           },
+          distinctGroup: false,
           warnOnUnassignedImports: true,
           pathGroups: [
             {
