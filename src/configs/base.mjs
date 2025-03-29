@@ -80,7 +80,7 @@ export default tseslint.config(
             order: 'asc',
           },
           distinctGroup: false,
-          warnOnUnassignedImports: true,
+          warnOnUnassignedImports: false,
           pathGroups: [
             {
               pattern: '@/**',
