@@ -86,7 +86,7 @@ export default tseslint.config(
               group: 'parent',
             },
             {
-              pattern: '@pohlen/*',
+              pattern: '@polhen/*',
               group: 'internal',
               position: 'after',
             },

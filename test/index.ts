@@ -56,3 +56,11 @@ try {
 }
 
 export type TestUnion = 'b' | 'a';
+
+const obj = { nid: () => `yo` };
+
+const foo = (() => 'foo')();
+
+const bar = (function () {
+  return 'bar';
+})();

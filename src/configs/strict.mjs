@@ -50,6 +50,8 @@ export default [
         {
           allowHigherOrderFunctions: true,
           allowDirectConstAssertionInArrowFunctions: true,
+          allowIIFEs: true,
+          allowExpressions: true,
         },
       ],
       '@typescript-eslint/strict-boolean-expressions': [
@@ -65,6 +67,7 @@ export default [
       'unicorn/no-for-loop': 'off', // handled by ts
       'unicorn/no-null': 'off', // can produce partial json
       'unicorn/prefer-ternary': 'off', // produce subpar code
+      'unicorn/no-nested-ternary': 'off', // conflict with prettier
 
       // Perfectionist
       'perfectionist/sort-enums': ['error', { type: 'alphabetical', order: 'asc' }],
