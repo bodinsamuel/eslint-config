@@ -5,7 +5,7 @@ import * as tseslint from 'typescript-eslint';
 export default [
   ...tseslint.configs.strict,
   ...tseslint.configs.stylistic,
-  eslintPluginUnicorn.configs['flat/recommended'],
+  eslintPluginUnicorn.configs['recommended'],
   {
     files: ['**/*.{ts,mts,cts,tsx,mtsx}'],
     plugins: {
